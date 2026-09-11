@@ -60,6 +60,10 @@
     li::marker { color: var(--accent); }
     a { color: var(--accent); text-underline-offset: .2em; overflow-wrap: anywhere; }
     a:hover { text-decoration-thickness: 2px; }
+    code {
+      font: .8125em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      overflow-wrap: anywhere;
+    }
     footer {
       max-width: 42rem;
       margin: 3.5rem auto 0;
@@ -92,13 +96,13 @@
 
     <section class="reveal">
       <h2>1. Qué datos accede</h2>
-      <p>videoautomat accede únicamente a las cuentas de YouTube del propio operador, mediante OAuth 2.0 de Google. El acceso se autoriza de forma explícita desde la pantalla de consentimiento de Google y se limita a estos permisos:</p>
+      <p>videoautomat accede únicamente a las cuentas de YouTube del propio operador, mediante OAuth 2.0 de Google. El acceso se autoriza de forma explícita desde la pantalla de consentimiento de Google y se limita a estos tres permisos:</p>
       <ul>
-        <li><strong>Subida:</strong> publicar videos en los canales propios del operador.</li>
-        <li><strong>Lectura:</strong> consultar la información de esos canales y de los videos publicados.</li>
-        <li><strong>Analítica:</strong> leer las métricas de rendimiento de esos canales, en modo solo lectura.</li>
+        <li><strong>Subida</strong> — <code>https://www.googleapis.com/auth/youtube.upload</code><br>Publicar videos en los canales propios del operador.</li>
+        <li><strong>Lectura</strong> — <code>https://www.googleapis.com/auth/youtube.readonly</code><br>Confirmar que cada video subido terminó de procesarse y leer sus datos: estado de procesamiento, privacidad, fecha de publicación y contadores de vistas, me gusta y comentarios.</li>
+        <li><strong>Analítica</strong> — <code>https://www.googleapis.com/auth/yt-analytics.readonly</code><br>Leer, en modo solo lectura, la retención de audiencia de los videos publicados.</li>
       </ul>
-      <p>Estos datos se usan exclusivamente para publicar el contenido programado y medir su rendimiento dentro de la herramienta.</p>
+      <p>No se solicita ningún otro permiso. Estos datos se usan exclusivamente para publicar el contenido programado, confirmar que quedó publicado y medir su rendimiento dentro de la herramienta.</p>
     </section>
 
     <section class="reveal">
