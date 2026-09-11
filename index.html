@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>videoautomat</title>
+  <meta name="description" content="videoautomat: herramienta interna de uso personal para publicar contenido corto en canales propios de YouTube.">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --fg: #1c1917;
+      --muted: #57534e;
+      --line: #e7e5e4;
+      --accent: #b91c1c;
+      --card: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161412;
+        --fg: #f5f5f4;
+        --muted: #a8a29e;
+        --line: #2e2a27;
+        --accent: #f87171;
+        --card: #1f1c1a;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      padding-block: clamp(3rem, 8vw, 6rem);
+      padding-inline: 1.25rem;
+      background: var(--bg);
+      color: var(--fg);
+      font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    main { max-width: 42rem; margin: 0 auto; }
+    h1 {
+      margin: 0 0 .5rem;
+      font-size: clamp(2.25rem, 6vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+    h2 {
+      margin: 0 0 .75rem;
+      font-size: 1.125rem;
+      letter-spacing: -.01em;
+    }
+    p { margin: 0 0 1rem; }
+    .lead { font-size: 1.2rem; color: var(--muted); max-width: 36rem; }
+    section {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+    ul { margin: 0; padding-left: 1.25rem; }
+    li { margin-bottom: .5rem; }
+    li::marker { color: var(--accent); }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    .links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
+    .links a {
+      display: inline-block;
+      padding: .6rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background: var(--card);
+      color: var(--fg);
+      text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+    .links a:hover, .links a:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
+    footer {
+      max-width: 42rem;
+      margin: 3.5rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-size: .875rem;
+      color: var(--muted);
+    }
+    .reveal { animation: rise .6s cubic-bezier(.2, .7, .2, 1) both; }
+    .reveal:nth-child(2) { animation-delay: .08s; }
+    .reveal:nth-child(3) { animation-delay: .16s; }
+    .reveal:nth-child(4) { animation-delay: .24s; }
+    .reveal:nth-child(5) { animation-delay: .32s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; }
+      .links a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="reveal">
+      <h1>videoautomat</h1>
+      <p class="lead">Herramienta interna de uso personal para publicar contenido corto en canales propios de YouTube.</p>
+    </header>
+
+    <section class="reveal">
+      <h2>Cómo funciona</h2>
+      <p>videoautomat recibe material de video con licencia de uso, provisto por campañas de marketing en las que participo como creador. Edita ese material a formato vertical, le agrega subtítulos y lo publica de forma programada en mis propios canales de YouTube.</p>
+    </section>
+
+    <section class="reveal">
+      <h2>Alcance</h2>
+      <ul>
+        <li>No tiene usuarios además del operador.</li>
+        <li>No ofrece el servicio a terceros.</li>
+        <li>No accede a cuentas de otras personas.</li>
+      </ul>
+    </section>
+
+    <section class="reveal">
+      <h2>Información</h2>
+      <div class="links">
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="mailto:fbellino889@gmail.com">fbellino889@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    videoautomat usa los Servicios de API de YouTube.
+    <a href="https://www.youtube.com/t/terms">Términos del Servicio de YouTube</a> ·
+    <a href="https://policies.google.com/privacy">Política de Privacidad de Google</a>
+  </footer>
+</body>
+</html>
